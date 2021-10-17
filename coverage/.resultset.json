@@ -1,0 +1,200 @@
+{
+  "Minitest": {
+    "coverage": {
+      "/home/davischoll/workspace/simple_market_list/app/controllers/application_controller.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null
+        ]
+      },
+      "/home/davischoll/workspace/simple_market_list/app/helpers/application_helper.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null
+        ]
+      },
+      "/home/davischoll/workspace/simple_market_list/app/helpers/market_lists_helper.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null
+        ]
+      },
+      "/home/davischoll/workspace/simple_market_list/app/controllers/market_lists_controller.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/home/davischoll/workspace/simple_market_list/app/jobs/application_job.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/davischoll/workspace/simple_market_list/app/mailers/application_mailer.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/home/davischoll/workspace/simple_market_list/app/models/market_list.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/home/davischoll/workspace/simple_market_list/app/models/application_record.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/home/davischoll/workspace/simple_market_list/app/channels/application_cable/channel.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/home/davischoll/workspace/simple_market_list/app/channels/application_cable/connection.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null,
+          null
+        ]
+      }
+    },
+    "timestamp": 1634425500
+  },
+  "Unit Tests": {
+    "coverage": {
+      "/home/davischoll/workspace/simple_market_list/app/controllers/application_controller.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null
+        ]
+      },
+      "/home/davischoll/workspace/simple_market_list/app/helpers/application_helper.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null
+        ]
+      },
+      "/home/davischoll/workspace/simple_market_list/app/helpers/market_lists_helper.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null
+        ]
+      },
+      "/home/davischoll/workspace/simple_market_list/app/controllers/market_lists_controller.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null
+        ]
+      },
+      "/home/davischoll/workspace/simple_market_list/app/jobs/application_job.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/davischoll/workspace/simple_market_list/app/mailers/application_mailer.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/home/davischoll/workspace/simple_market_list/app/models/market_list.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/home/davischoll/workspace/simple_market_list/app/models/application_record.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/home/davischoll/workspace/simple_market_list/app/channels/application_cable/channel.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/home/davischoll/workspace/simple_market_list/app/channels/application_cable/connection.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null,
+          null
+        ]
+      }
+    },
+    "timestamp": 1634424060
+  }
+}

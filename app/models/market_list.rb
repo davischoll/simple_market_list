@@ -1,0 +1,2 @@
+class MarketList < ApplicationRecord
+end
