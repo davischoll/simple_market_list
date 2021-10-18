@@ -40,4 +40,18 @@ class MarketListsControllerTest < ActionDispatch::IntegrationTest
     assert_select 'input[name=\'market_list[market_date]\']'
     assert_select 'form[action=\'/market_lists\']'
   end
+
+  test 'Should create a new market list if market date is filled' do
+    assert_difference 'MarketList.count', 2 do
+      post market_lists_path, params: { market_list: { name: 'My List', market_date: '2021-10-16' } }
+      post market_lists_path, params: { market_list: { name: '', market_date: '2021-10-16' } }
+    end
+  end
+
+  test 'Should show market date is required if it is empty' do
+    assert_difference 'MarketList.count', 0 do
+      post market_lists_path, params: { market_list: { name: 'My List', market_date: '' } }
+      assert_select 'li', 'Market date can\'t be blank'
+    end
+  end
 end
