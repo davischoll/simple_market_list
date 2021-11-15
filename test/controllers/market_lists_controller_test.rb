@@ -27,7 +27,7 @@ class MarketListsControllerTest < ActionDispatch::IntegrationTest
     assert_select 'p', text: 'Você ainda não possui nenhuma lista'
   end
 
-  test "User should have new button on market list index" do
+  test 'User should have new button on market list index' do
     get market_lists_path
     assert_response :success
     assert_select 'a', text: 'Nova Lista de Mercado'
