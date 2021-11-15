@@ -11,6 +11,7 @@ Rails.application.eager_load! # Necessário por conta do spring
 ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
 require 'rails/test_help'
+require 'minitest/autorun'
 
 module ActiveSupport
   class TestCase

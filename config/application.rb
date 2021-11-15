@@ -41,5 +41,8 @@ module SimpleMarketList
 
       instance_tag.safe_join(html) # avoid html injection on error message.
     end
+
+    I18n.available_locales = [:'pt-BR']
+    I18n.default_locale = :'pt-BR'
   end
 end

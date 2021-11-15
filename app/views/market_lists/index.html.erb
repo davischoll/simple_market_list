@@ -1,3 +1,23 @@
+<% if flash[:success].present? %>
+  <p><%= flash[:success] %></p>
+<% end %>
+
 <h1>Suas listas de mercado</h1>
 <%= link_to 'Nova Lista de Mercado', new_market_list_path %>
-<p>Você ainda não possui nenhuma lista</p>
+
+<% if @market_lists.any? %>
+  <table>
+    <thead>
+      <th>ID</th><th>Nome</th><th>Data</th>
+    </thead>
+    <tbody>
+      <% @market_lists.each do |ml| %>
+        <tr>
+          <td><%= ml.id %></td><td><%= ml.name %></td><td><%= l ml.market_date %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>Você ainda não possui nenhuma lista</p>
+<% end %>

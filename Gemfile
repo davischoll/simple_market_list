@@ -62,3 +62,5 @@ gem 'simplecov', require: false, group: :test
 
 gem 'rubocop', require: false
 gem 'rubocop-rails', require: false
+
+gem 'rails-i18n'
