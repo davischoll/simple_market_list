@@ -1,9 +1,3 @@
 <h2>Editar Lista</h2>
 
-<%= form_for @market_list do |f| %>
-  <label>Nome</label>: <%= f.text_field :name %>
-  <br />
-  <label>Data</label>: <%= f.date_field :market_date %>
-  <br />
-  <%= f.submit %>
-<% end %>
+<%= render 'form' %>
