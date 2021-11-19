@@ -96,4 +96,39 @@ class MarketListsControllerTest < ActionDispatch::IntegrationTest
     assert_select 'input[name=\'market_list[market_date]\'][value=?]', market_list.market_date.to_s
     assert_select "form[action=\'/market_lists/#{market_list.id}\']"
   end
+
+  test 'Should update an exist market list if market date is filled' do
+    market_list = market_lists(:one)
+
+    assert_difference 'MarketList.count', 0 do
+      put market_list_path(market_list), params: { market_list: { name: 'My List', market_date: '2021-05-29' } }
+      market_list.reload # recarrega o objeto do banco de dados
+      assert_equal 'My List', market_list.name
+      assert_equal Date.parse('2021-05-29'), market_list.market_date
+
+      put market_list_path(market_list), params: { market_list: { name: '', market_date: '2021-05-29' } }
+      market_list.reload # recarrega o objeto do banco de dados
+      assert_equal '', market_list.name
+      assert_equal Date.parse('2021-05-29'), market_list.market_date
+    end
+
+    follow_redirect!
+
+    assert_select 'a', text: 'Nova Lista de Mercado'
+    assert_select 'p', 'Lista editada com sucesso'
+  end
+
+  test 'Should show market date is required on edit if it is empty' do
+    market_list = market_lists(:one)
+
+    assert_difference 'MarketList.count', 0 do
+      initial_market_date = market_list.market_date
+      put market_list_path(market_list), params: { market_list: { name: 'My List', market_date: '' } }
+
+      market_list.reload # recarrega o objeto do banco de dados
+      assert_equal initial_market_date, market_list.market_date
+
+      assert_select 'li', 'Market date não pode ficar em branco'
+    end
+  end
 end
