@@ -76,4 +76,24 @@ class MarketListsControllerTest < ActionDispatch::IntegrationTest
       assert_select 'td', text: '16/10/2021'
     end
   end
+
+  test 'Should show edit link on market list index' do
+    get market_lists_path
+    assert_response :success
+
+    MarketList.all.each do |ml|
+      assert_select "a[href='/market_lists/#{ml.id}/edit']"
+    end
+  end
+
+  test 'User should see previous name and date on edit form' do
+    market_list = market_lists(:one)
+
+    get edit_market_list_path(market_list)
+    assert_response :success
+
+    assert_select 'input[name=\'market_list[name]\'][value=?]', market_list.name
+    assert_select 'input[name=\'market_list[market_date]\'][value=?]', market_list.market_date.to_s
+    assert_select "form[action=\'/market_lists/#{market_list.id}\']"
+  end
 end

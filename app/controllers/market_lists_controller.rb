@@ -20,4 +20,8 @@ class MarketListsController < ApplicationController
       render :new
     end
   end
+
+  def edit
+    @market_list = MarketList.find(params[:id])
+  end
 end

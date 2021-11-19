@@ -13,7 +13,10 @@
     <tbody>
       <% @market_lists.each do |ml| %>
         <tr>
-          <td><%= ml.id %></td><td><%= ml.name %></td><td><%= l ml.market_date %></td>
+          <td><%= ml.id %></td>
+          <td><%= ml.name %></td>
+          <td><%= l ml.market_date %></td>
+          <td><%= link_to 'Editar', edit_market_list_path(ml) %>
         </tr>
       <% end %>
     </tbody>
