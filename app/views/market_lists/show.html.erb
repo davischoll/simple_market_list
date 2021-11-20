@@ -1,0 +1,6 @@
+<h1><%= @market_list.name %> - <%= l @market_list.market_date %></h1>
+
+<%= link_to 'Voltar', market_lists_path %>
+<%= link_to 'Novo item', new_market_list_market_list_item_path(@market_list) %>
+
+<p>Você ainda não possui nenhum item para essa lista</p>

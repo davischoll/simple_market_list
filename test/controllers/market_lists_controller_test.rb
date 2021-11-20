@@ -77,12 +77,13 @@ class MarketListsControllerTest < ActionDispatch::IntegrationTest
     end
   end
 
-  test 'Should show edit link on market list index' do
+  test 'Should show edit and show link on market list index' do
     get market_lists_path
     assert_response :success
 
     MarketList.all.each do |ml|
       assert_select "a[href='/market_lists/#{ml.id}/edit']"
+      assert_select "a[href='/market_lists/#{ml.id}']"
     end
   end
 
@@ -130,5 +131,33 @@ class MarketListsControllerTest < ActionDispatch::IntegrationTest
 
       assert_select 'li', 'Market date não pode ficar em branco'
     end
+  end
+
+  test 'Should show current market list details' do
+    market_list = market_lists(:one)
+    get market_list_path(market_list)
+    assert_response :success
+    assert_select 'h1', text: "#{market_list.name} - #{I18n.l market_list.market_date}"
+  end
+
+  test 'Should show back button' do
+    market_list = market_lists(:one)
+    get market_list_path(market_list)
+    assert_response :success
+    assert_select 'a[href=?]', market_lists_path
+  end
+
+  test "Should show you don't have any itens message if don't have any item" do
+    market_list = market_lists(:one)
+    get market_list_path(market_list)
+    assert_response :success
+    assert_select 'p', text: 'Você ainda não possui nenhum item para essa lista'
+  end
+
+  test 'Should show new item button' do
+    market_list = market_lists(:one)
+    get market_list_path(market_list)
+    assert_response :success
+    assert_select 'a[href=?]', new_market_list_market_list_item_path(market_list), text: 'Novo item'
   end
 end

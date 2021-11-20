@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class MarketListsController < ApplicationController
+  before_action :find_market_list, only: [:show, :edit, :update]
+
   def index
     @market_lists = MarketList.all
   end
@@ -21,12 +23,9 @@ class MarketListsController < ApplicationController
     end
   end
 
-  def edit
-    @market_list = MarketList.find(params[:id])
-  end
+  def edit; end
 
   def update
-    @market_list = MarketList.find(params[:id])
     @market_list.attributes = params.require(:market_list).permit(:name, :market_date)
 
     if @market_list.save
@@ -35,5 +34,13 @@ class MarketListsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def show; end
+
+  protected
+
+  def find_market_list
+    @market_list = MarketList.find(params[:id])
   end
 end

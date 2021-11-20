@@ -16,7 +16,7 @@
           <td><%= ml.id %></td>
           <td><%= ml.name %></td>
           <td><%= l ml.market_date %></td>
-          <td><%= link_to 'Editar', edit_market_list_path(ml) %>
+          <td><%= link_to 'Visualizar', market_list_path(ml) %> | <%= link_to 'Editar', edit_market_list_path(ml) %></td>
         </tr>
       <% end %>
     </tbody>
